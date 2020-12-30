@@ -50,7 +50,8 @@ projectionMatrix.Projection(
     viewAngle, 
     width, 
     height, 
-    nearClippingPlaceDistance, farClippingPlaceDistance)
+    nearClippingPlaceDistance, 
+    farClippingPlaceDistance)
 ```
 and upload it to your shader instance.
 
