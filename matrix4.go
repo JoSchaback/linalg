@@ -67,6 +67,25 @@ func (m *Matrix4) Eye() {
 	m.M_3_3 = 1
 }
 
+func (m *Matrix4) Set(v Matrix4) {
+	m.M_0_0 = v.M_0_0
+	m.M_0_1 = v.M_0_1
+	m.M_0_2 = v.M_0_2
+	m.M_0_3 = v.M_0_3
+	m.M_1_0 = v.M_1_0
+	m.M_1_1 = v.M_1_1
+	m.M_1_2 = v.M_1_2
+	m.M_1_3 = v.M_1_3
+	m.M_2_0 = v.M_2_0
+	m.M_2_1 = v.M_2_1
+	m.M_2_2 = v.M_2_2
+	m.M_2_3 = v.M_2_3
+	m.M_3_0 = v.M_3_0
+	m.M_3_1 = v.M_3_1
+	m.M_3_2 = v.M_3_2
+	m.M_3_3 = v.M_3_3
+}
+
 func (self *Matrix4) Frustum(left float32, right float32, bottom float32, top float32, near float32, far float32) {
 	// http://www.songho.ca/opengl/gl_projectionmatrix.html
 	self.Eye()

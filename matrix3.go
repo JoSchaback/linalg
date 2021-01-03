@@ -105,3 +105,15 @@ func (m *Matrix3) MultVector3WriteBack(v *Vector3) {
 	v.Y = ny
 	v.Z = nz
 }
+
+func (m *Matrix3) Set(v Matrix3) {
+	m.M_0_0 = v.M_0_0
+	m.M_0_1 = v.M_0_1
+	m.M_0_2 = v.M_0_2
+	m.M_1_0 = v.M_1_0
+	m.M_1_1 = v.M_1_1
+	m.M_1_2 = v.M_1_2
+	m.M_2_0 = v.M_2_0
+	m.M_2_1 = v.M_2_1
+	m.M_2_2 = v.M_2_2
+}

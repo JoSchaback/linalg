@@ -7,7 +7,7 @@ import (
 func TestMultVector3WriteBack(t *testing.T) {
 	v := Vector3{1, 3, 7}
 	m := NewMatrix4()
-	m.MultVector3WriteBack(v, 1)
+	m.MultVector3WriteBack(&v, 1)
 	if v.X != 1 { // float32 got numeric error?!
 		t.Errorf("m.MultVector3WriteBack(v): expected 1, bot got %f", v.X)
 	}
