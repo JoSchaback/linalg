@@ -87,3 +87,21 @@ func (m *Matrix3) MakeNormalMatrix(view Matrix4) {
 	m.Invert()
 	m.Transpose()
 }
+
+func (m *Matrix3) multVector3(v Vector3) Vector3 {
+	nx := v.X*m.M_0_0 + v.Y*m.M_1_0 + v.Z*m.M_2_0
+	ny := v.X*m.M_0_1 + v.Y*m.M_1_1 + v.Z*m.M_2_1
+	nz := v.X*m.M_0_2 + v.Y*m.M_1_2 + v.Z*m.M_2_2
+
+	return Vector3{nx, ny, nz}
+}
+
+func (m *Matrix3) multVector3WriteBack(v Vector3) {
+	nx := v.X*m.M_0_0 + v.Y*m.M_1_0 + v.Z*m.M_2_0
+	ny := v.X*m.M_0_1 + v.Y*m.M_1_1 + v.Z*m.M_2_1
+	nz := v.X*m.M_0_2 + v.Y*m.M_1_2 + v.Z*m.M_2_2
+
+	v.X = nx
+	v.Y = ny
+	v.Z = nz
+}
