@@ -229,7 +229,7 @@ func (m *Matrix4) MultVector3(v Vector3, w float32) Vector3 {
 	return Vector3{nx, ny, nz}
 }
 
-func (m *Matrix4) MultVector3WriteBack(v Vector3, w float32) {
+func (m *Matrix4) MultVector3WriteBack(v *Vector3, w float32) {
 	nx := v.X*m.M_0_0 + v.Y*m.M_1_0 + v.Z*m.M_2_0 + w*m.M_3_0
 	ny := v.X*m.M_0_1 + v.Y*m.M_1_1 + v.Z*m.M_2_1 + w*m.M_3_1
 	nz := v.X*m.M_0_2 + v.Y*m.M_1_2 + v.Z*m.M_2_2 + w*m.M_3_2
